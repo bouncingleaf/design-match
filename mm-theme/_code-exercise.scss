@@ -2,9 +2,12 @@
 $mm-sample-font-sans-serif: Helvetica, Arial, sans-serif;
 $mm-sample-font-serif:      Georgia, "Times New Roman", Times, serif;
 
-
 html {
-  font-size: 62.5%; //why do we set the font size to this value at the html level?
+  // Why do we set the font size to this value at the html level?
+  // Good explanation: https://engageinteractive.co.uk/blog/em-vs-rem-vs-px
+  // Short version: it makes 1.6rem == 16 px, making the math easy but still
+  // allowing for accessibility (letting the user adjust font sizes)
+  font-size: 62.5%;
   position: relative;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -76,8 +79,27 @@ a {
   border-radius: 0;
 }
 
+%indent {
+  padding: 0 1.2rem;
+}
+
+// This is outside mm-card on the assumption that the button styling
+// is more universal
+button {
+  @extend %btn-primary;
+}
+
 .mm-card {
   //feel free to make any comments to explain your thinking
+
+  // Space between cards
+  margin: 1rem 0;
+
+  // We're better off naming classes after their function, that way if we need to change
+  // the styling we just change it in CSS rather than updating the HTML
+  .title {
+    @extend %h2, %indent;
+  }
 
   .image {
     //including some base styles so this shows up in the basic page, feel free to change these
@@ -87,6 +109,23 @@ a {
   }
 
   .content {
-
+    font-family: $mm-sample-font-sans-serif;
   }
+
+  .category {
+    // This needs more space above it...
+    // But I've reached a point where none of my CSS edits 
+    // are having any effect anymore... moving on
+    @extend %eyebrow;
+  }
+
+  p {
+    @extend %indent;
+  }
+
+  .legal {
+    // This shouldn't be indented as much as it is, though...
+    @extend %subtext;
+  }
+  
 }

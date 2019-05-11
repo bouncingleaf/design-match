@@ -25,12 +25,12 @@ header img {
   margin-top: 5rem;
 }
 
-h1, h2 {
+h1, h2, .mm-card .title {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #000;
 }
 
-p, h1, h2 {
+p, h1, h2, .mm-card .title {
   margin: 0 0 2rem 0;
 }
 
@@ -38,7 +38,7 @@ h1 {
   font-size: 4rem;
 }
 
-h2 {
+h2, .mm-card .title {
   font-size: 3rem;
 }
 
@@ -53,10 +53,44 @@ a:hover {
   color: #002f6c;
 }
 
+.mm-card .category {
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  line-height: 1.2rem;
+  margin-bottom: 2.4rem;
+}
+
+.mm-card .legal {
+  font-size: 1.2rem;
+}
+
+button {
+  color: #000;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1.2rem 4rem;
+  background-color: yellow;
+  border: 0;
+  border-radius: 0;
+}
+
+.mm-card p, .mm-card .title {
+  padding: 0 1.2rem;
+}
+
+.mm-card {
+  margin: 1rem 0;
+}
 .mm-card .image {
   height: inherit;
   min-height: 15rem;
   width: 100%;
+}
+.mm-card .content {
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 /*# sourceMappingURL=mm-code-exercise.css.map */
